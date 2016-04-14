@@ -9,7 +9,3 @@
         <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
 
 <?php endforeach; ?>
-
-<?php
-echo '<h2>'.$news_item['title'].'</h2>';
-echo $news_item['text'];
