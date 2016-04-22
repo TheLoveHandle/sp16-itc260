@@ -12,9 +12,9 @@ class News extends CI_Controller {
                 $data['page_id'] = 'News';
                 $data['title'] = 'News Archive';
 
-                $this->load->view('templates/header', $data);
+                //$this->load->view('templates/header', $data);
                 $this->load->view('news/index', $data);
-                $this->load->view('templates/footer');
+                //$this->load->view('templates/footer');
         }
 
         public function view($slug = NULL){
