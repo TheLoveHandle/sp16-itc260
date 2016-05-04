@@ -20,8 +20,6 @@ class News_model extends CI_Model {
         $this->load->helper('url');
 
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
-echo 'inside news model';
-        die;
         $data = array(
             'title' => $this->input->post('title'),
             'slug' => $slug,
@@ -29,16 +27,10 @@ echo 'inside news model';
         );
         
         if($this->db->insert('sp16_news', $data)){
-            //echo $this->db->insert_id();
-            $id = $this->db->insert_id();
-            die;
-            
-            $query = $this->db->get('sp16_news', array('id' => $id));
-            return $query->result_array();
+            return $slug;
         }
         else{
-            echo 'uh oh';
-            die;
+            return false;
         }
 
         //return $this->db->insert('sp16_news', $data);
